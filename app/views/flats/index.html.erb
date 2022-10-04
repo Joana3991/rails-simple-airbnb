@@ -1,0 +1,15 @@
+<div class="container mt-3">
+  <h1>All our Flats</h1>
+  <% @flats.each do |flat| %>
+        <h4><%= flat.name %></h4>
+        <p><%= flat.address %></p>
+        <span><%= flat.number_of_guests %></span>
+        <span><%= flat.price_per_night %></span>
+
+        <%= link_to "More info", flat_path(flat) %>
+        <%= link_to "Edit", edit_flat_path(flat), class: "ms-3 text-warning" %>
+        <%= link_to "Remove", flat_path(flat),
+            data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+            class: "ms-3 text-danger" %>
+  <% end %>
+</div>
