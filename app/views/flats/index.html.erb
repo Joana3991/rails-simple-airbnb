@@ -3,7 +3,7 @@
   <% @flats.each do |flat| %>
         <h4><%= flat.name %></h4>
         <p><%= flat.address %></p>
-        <span><%= flat.number_of_guests %></span>
+        <span><%= flat.total_guests %></span>
         <span><%= flat.price_per_night %></span>
 
         <%= link_to "More info", flat_path(flat) %>
